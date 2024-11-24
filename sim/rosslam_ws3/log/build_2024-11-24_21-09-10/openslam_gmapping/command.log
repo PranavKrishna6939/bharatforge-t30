@@ -1,0 +1,4 @@
+Invoking command in '/home/joel-bansal/bharat_ws/build/openslam_gmapping': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/bharat_ws/build/openslam_gmapping -- -j4 -l4
+Invoked command in '/home/joel-bansal/bharat_ws/build/openslam_gmapping' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/bharat_ws/build/openslam_gmapping -- -j4 -l4
+Invoking command in '/home/joel-bansal/bharat_ws/build/openslam_gmapping': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/bharat_ws/build/openslam_gmapping
+Invoked command in '/home/joel-bansal/bharat_ws/build/openslam_gmapping' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/bharat_ws/build/openslam_gmapping
