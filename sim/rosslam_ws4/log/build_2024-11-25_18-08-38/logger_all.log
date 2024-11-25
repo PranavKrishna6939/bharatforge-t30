@@ -1,0 +1,368 @@
+[0.184s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.185s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x715d474605b0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x715d47559150>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x715d47559150>>)
+[0.479s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.480s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.480s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.480s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.480s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.480s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.480s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4'
+[0.480s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.480s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.480s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.480s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'ignore'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'ignore_ament_install'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['colcon_pkg']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'colcon_pkg'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['colcon_meta']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'colcon_meta'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['ros']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'ros'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['cmake', 'python']
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'cmake'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'python'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['python_setup_py']
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'python_setup_py'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extensions ['ignore', 'ignore_ament_install']
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'ignore'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'ignore_ament_install'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extensions ['colcon_pkg']
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'colcon_pkg'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extensions ['colcon_meta']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'colcon_meta'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extensions ['ros']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'ros'
+[0.512s] DEBUG:colcon.colcon_core.package_identification:Package 'src/m-explore-ros2/explore' with type 'ros.ament_cmake' and name 'explore_lite'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extensions ['ignore', 'ignore_ament_install']
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'ignore'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'ignore_ament_install'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extensions ['colcon_pkg']
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'colcon_pkg'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extensions ['colcon_meta']
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'colcon_meta'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extensions ['ros']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'ros'
+[0.514s] DEBUG:colcon.colcon_core.package_identification:Package 'src/m-explore-ros2/map_merge' with type 'ros.ament_cmake' and name 'multirobot_map_merge'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extensions ['ignore', 'ignore_ament_install']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extension 'ignore'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extension 'ignore_ament_install'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extensions ['colcon_pkg']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extension 'colcon_pkg'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extensions ['colcon_meta']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extension 'colcon_meta'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extensions ['ros']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extension 'ros'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extensions ['cmake', 'python']
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extension 'cmake'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extension 'python'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extensions ['python_setup_py']
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping) by extension 'python_setup_py'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/openslam_gmapping) by extensions ['ignore', 'ignore_ament_install']
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/openslam_gmapping) by extension 'ignore'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/openslam_gmapping) by extension 'ignore_ament_install'
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/openslam_gmapping) by extensions ['colcon_pkg']
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/openslam_gmapping) by extension 'colcon_pkg'
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/openslam_gmapping) by extensions ['colcon_meta']
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/openslam_gmapping) by extension 'colcon_meta'
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/openslam_gmapping) by extensions ['ros']
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/openslam_gmapping) by extension 'ros'
+[0.518s] DEBUG:colcon.colcon_core.package_identification:Package 'src/slam_gmapping/openslam_gmapping' with type 'ros.ament_cmake' and name 'openslam_gmapping'
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/slam_gmapping) by extensions ['ignore', 'ignore_ament_install']
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/slam_gmapping) by extension 'ignore'
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/slam_gmapping) by extension 'ignore_ament_install'
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/slam_gmapping) by extensions ['colcon_pkg']
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/slam_gmapping) by extension 'colcon_pkg'
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/slam_gmapping) by extensions ['colcon_meta']
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/slam_gmapping) by extension 'colcon_meta'
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/slam_gmapping) by extensions ['ros']
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_gmapping/slam_gmapping) by extension 'ros'
+[0.522s] DEBUG:colcon.colcon_core.package_identification:Package 'src/slam_gmapping/slam_gmapping' with type 'ros.ament_cmake' and name 'slam_gmapping'
+[0.522s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.522s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.522s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.522s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.522s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.573s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.573s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.578s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 345 installed packages in /opt/ros/humble
+[0.581s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.664s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_args' from command line to 'None'
+[0.665s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_target' from command line to 'None'
+[0.665s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.665s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_clean_cache' from command line to 'False'
+[0.665s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_clean_first' from command line to 'False'
+[0.665s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_force_configure' from command line to 'False'
+[0.665s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'ament_cmake_args' from command line to 'None'
+[0.665s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'catkin_cmake_args' from command line to 'None'
+[0.665s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.665s] DEBUG:colcon.colcon_core.verb:Building package 'explore_lite' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite', 'merge_install': False, 'path': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/explore', 'symlink_install': False, 'test_result_base': None}
+[0.666s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_args' from command line to 'None'
+[0.666s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_target' from command line to 'None'
+[0.666s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.666s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.666s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_clean_first' from command line to 'False'
+[0.666s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_force_configure' from command line to 'False'
+[0.666s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'ament_cmake_args' from command line to 'None'
+[0.666s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.666s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.666s] DEBUG:colcon.colcon_core.verb:Building package 'multirobot_map_merge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge', 'merge_install': False, 'path': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/map_merge', 'symlink_install': False, 'test_result_base': None}
+[0.667s] Level 5:colcon.colcon_core.verb:set package 'openslam_gmapping' build argument 'cmake_args' from command line to 'None'
+[0.667s] Level 5:colcon.colcon_core.verb:set package 'openslam_gmapping' build argument 'cmake_target' from command line to 'None'
+[0.667s] Level 5:colcon.colcon_core.verb:set package 'openslam_gmapping' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.667s] Level 5:colcon.colcon_core.verb:set package 'openslam_gmapping' build argument 'cmake_clean_cache' from command line to 'False'
+[0.667s] Level 5:colcon.colcon_core.verb:set package 'openslam_gmapping' build argument 'cmake_clean_first' from command line to 'False'
+[0.667s] Level 5:colcon.colcon_core.verb:set package 'openslam_gmapping' build argument 'cmake_force_configure' from command line to 'False'
+[0.667s] Level 5:colcon.colcon_core.verb:set package 'openslam_gmapping' build argument 'ament_cmake_args' from command line to 'None'
+[0.667s] Level 5:colcon.colcon_core.verb:set package 'openslam_gmapping' build argument 'catkin_cmake_args' from command line to 'None'
+[0.667s] Level 5:colcon.colcon_core.verb:set package 'openslam_gmapping' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.667s] DEBUG:colcon.colcon_core.verb:Building package 'openslam_gmapping' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping', 'merge_install': False, 'path': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/openslam_gmapping', 'symlink_install': False, 'test_result_base': None}
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'slam_gmapping' build argument 'cmake_args' from command line to 'None'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'slam_gmapping' build argument 'cmake_target' from command line to 'None'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'slam_gmapping' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'slam_gmapping' build argument 'cmake_clean_cache' from command line to 'False'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'slam_gmapping' build argument 'cmake_clean_first' from command line to 'False'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'slam_gmapping' build argument 'cmake_force_configure' from command line to 'False'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'slam_gmapping' build argument 'ament_cmake_args' from command line to 'None'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'slam_gmapping' build argument 'catkin_cmake_args' from command line to 'None'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'slam_gmapping' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.668s] DEBUG:colcon.colcon_core.verb:Building package 'slam_gmapping' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping', 'merge_install': False, 'path': '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping', 'symlink_install': False, 'test_result_base': None}
+[0.668s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.670s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.670s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/openslam_gmapping' with build type 'ament_cmake'
+[0.670s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/openslam_gmapping'
+[0.675s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.675s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.675s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.681s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/explore' with build type 'ament_cmake'
+[0.681s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/explore'
+[0.682s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.682s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.688s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/map_merge' with build type 'ament_cmake'
+[0.688s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/map_merge'
+[0.689s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.689s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.704s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/openslam_gmapping -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping
+[0.708s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/explore -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite
+[0.716s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/map_merge -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge
+[2.374s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/openslam_gmapping -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping
+[2.375s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping -- -j4 -l4
+[7.993s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/explore -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite
+[7.997s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite -- -j4 -l4
+[16.733s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping -- -j4 -l4
+[16.926s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping
+[17.034s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(openslam_gmapping)
+[17.035s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/openslam_gmapping
+[17.050s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping' for CMake module files
+[17.054s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping' for CMake config files
+[17.056s] Level 1:colcon.colcon_core.shell:create_environment_hook('openslam_gmapping', 'cmake_prefix_path')
+[17.060s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/hook/cmake_prefix_path.ps1'
+[17.061s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/hook/cmake_prefix_path.dsv'
+[17.065s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/hook/cmake_prefix_path.sh'
+[17.068s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib'
+[17.073s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/bin'
+[17.073s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib/pkgconfig/openslam_gmapping.pc'
+[17.074s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib/python3.10/site-packages'
+[17.074s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/bin'
+[17.078s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.ps1'
+[17.081s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.dsv'
+[17.085s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.sh'
+[17.091s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.bash'
+[17.096s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.zsh'
+[17.099s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/colcon-core/packages/openslam_gmapping)
+[17.231s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(openslam_gmapping)
+[17.232s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping' for CMake module files
+[17.238s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping' for CMake config files
+[17.239s] Level 1:colcon.colcon_core.shell:create_environment_hook('openslam_gmapping', 'cmake_prefix_path')
+[17.240s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/hook/cmake_prefix_path.ps1'
+[17.242s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/hook/cmake_prefix_path.dsv'
+[17.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/hook/cmake_prefix_path.sh'
+[17.249s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib'
+[17.250s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/bin'
+[17.250s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib/pkgconfig/openslam_gmapping.pc'
+[17.251s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib/python3.10/site-packages'
+[17.254s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/bin'
+[17.255s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.ps1'
+[17.257s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.dsv'
+[17.261s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.sh'
+[17.262s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.bash'
+[17.267s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/package.zsh'
+[17.268s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/colcon-core/packages/openslam_gmapping)
+[17.272s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping' with build type 'ament_cmake'
+[17.273s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping'
+[17.274s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[17.274s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[17.324s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping
+[24.050s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping' returned '0': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping
+[24.064s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping -- -j4 -l4
+[57.455s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite -- -j4 -l4
+[57.546s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite
+[57.595s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(explore_lite)
+[57.596s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite' for CMake module files
+[57.597s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite
+[57.598s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite' for CMake config files
+[57.599s] Level 1:colcon.colcon_core.shell:create_environment_hook('explore_lite', 'cmake_prefix_path')
+[57.600s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.ps1'
+[57.601s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.dsv'
+[57.602s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.sh'
+[57.604s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/lib'
+[57.604s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/bin'
+[57.604s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/lib/pkgconfig/explore_lite.pc'
+[57.605s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/lib/python3.10/site-packages'
+[57.605s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/bin'
+[57.606s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.ps1'
+[57.607s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.dsv'
+[57.608s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.sh'
+[57.609s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.bash'
+[57.612s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.zsh'
+[57.613s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/colcon-core/packages/explore_lite)
+[57.703s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(explore_lite)
+[57.704s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite' for CMake module files
+[57.706s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite' for CMake config files
+[57.707s] Level 1:colcon.colcon_core.shell:create_environment_hook('explore_lite', 'cmake_prefix_path')
+[57.708s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.ps1'
+[57.709s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.dsv'
+[57.710s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.sh'
+[57.711s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/lib'
+[57.712s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/bin'
+[57.712s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/lib/pkgconfig/explore_lite.pc'
+[57.712s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/lib/python3.10/site-packages'
+[57.713s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/bin'
+[57.714s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.ps1'
+[57.715s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.dsv'
+[57.716s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.sh'
+[57.718s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.bash'
+[57.719s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/explore_lite/package.zsh'
+[57.720s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/explore_lite/share/colcon-core/packages/explore_lite)
+[60.916s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping' returned '0': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping -- -j4 -l4
+[60.965s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping
+[60.998s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(slam_gmapping)
+[60.999s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping' for CMake module files
+[61.000s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping' returned '0': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping
+[61.001s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping' for CMake config files
+[61.001s] Level 1:colcon.colcon_core.shell:create_environment_hook('slam_gmapping', 'cmake_prefix_path')
+[61.002s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/hook/cmake_prefix_path.ps1'
+[61.003s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/hook/cmake_prefix_path.dsv'
+[61.003s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/hook/cmake_prefix_path.sh'
+[61.005s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/lib'
+[61.005s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/bin'
+[61.005s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/lib/pkgconfig/slam_gmapping.pc'
+[61.005s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/lib/python3.10/site-packages'
+[61.006s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/bin'
+[61.007s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.ps1'
+[61.008s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.dsv'
+[61.009s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.sh'
+[61.010s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.bash'
+[61.010s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.zsh'
+[61.011s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/colcon-core/packages/slam_gmapping)
+[61.059s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(slam_gmapping)
+[61.059s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping' for CMake module files
+[61.061s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping' for CMake config files
+[61.061s] Level 1:colcon.colcon_core.shell:create_environment_hook('slam_gmapping', 'cmake_prefix_path')
+[61.062s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/hook/cmake_prefix_path.ps1'
+[61.063s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/hook/cmake_prefix_path.dsv'
+[61.063s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/hook/cmake_prefix_path.sh'
+[61.065s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/lib'
+[61.065s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/bin'
+[61.065s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/lib/pkgconfig/slam_gmapping.pc'
+[61.066s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/lib/python3.10/site-packages'
+[61.066s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/bin'
+[61.067s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.ps1'
+[61.068s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.dsv'
+[61.069s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.sh'
+[61.070s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.bash'
+[61.071s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.zsh'
+[61.072s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/colcon-core/packages/slam_gmapping)
+[139.956s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/m-explore-ros2/map_merge -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge
+[139.959s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge -- -j4 -l4
+[177.830s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge -- -j4 -l4
+[177.906s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge
+[177.950s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(multirobot_map_merge)
+[177.951s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge' for CMake module files
+[177.952s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/multirobot_map_merge
+[177.953s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge' for CMake config files
+[177.954s] Level 1:colcon.colcon_core.shell:create_environment_hook('multirobot_map_merge', 'cmake_prefix_path')
+[177.954s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.ps1'
+[177.955s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.dsv'
+[177.955s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.sh'
+[177.956s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/lib'
+[177.956s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/bin'
+[177.957s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/lib/pkgconfig/multirobot_map_merge.pc'
+[177.957s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/lib/python3.10/site-packages'
+[177.957s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/bin'
+[177.958s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.ps1'
+[177.958s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.dsv'
+[177.959s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.sh'
+[177.960s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.bash'
+[177.960s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.zsh'
+[177.961s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/colcon-core/packages/multirobot_map_merge)
+[178.033s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(multirobot_map_merge)
+[178.033s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge' for CMake module files
+[178.034s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge' for CMake config files
+[178.035s] Level 1:colcon.colcon_core.shell:create_environment_hook('multirobot_map_merge', 'cmake_prefix_path')
+[178.035s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.ps1'
+[178.036s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.dsv'
+[178.037s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.sh'
+[178.039s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/lib'
+[178.039s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/bin'
+[178.039s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/lib/pkgconfig/multirobot_map_merge.pc'
+[178.040s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/lib/python3.10/site-packages'
+[178.040s] Level 1:colcon.colcon_core.environment:checking '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/bin'
+[178.041s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.ps1'
+[178.042s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.dsv'
+[178.043s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.sh'
+[178.043s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.bash'
+[178.044s] INFO:colcon.colcon_core.shell:Creating package script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/multirobot_map_merge/package.zsh'
+[178.045s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/multirobot_map_merge/share/colcon-core/packages/multirobot_map_merge)
+[178.045s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[178.046s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[178.047s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[178.047s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[178.082s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[178.082s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[178.082s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[178.103s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[178.104s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/local_setup.ps1'
+[178.106s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/_local_setup_util_ps1.py'
+[178.108s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/setup.ps1'
+[178.110s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/local_setup.sh'
+[178.111s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/_local_setup_util_sh.py'
+[178.112s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/setup.sh'
+[178.114s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/local_setup.bash'
+[178.115s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/setup.bash'
+[178.116s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/local_setup.zsh'
+[178.117s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/setup.zsh'

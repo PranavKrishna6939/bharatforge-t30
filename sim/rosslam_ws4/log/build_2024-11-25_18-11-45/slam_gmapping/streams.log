@@ -1,0 +1,25 @@
+[0.016s] Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping -- -j4 -l4
+[0.090s] [35m[1mConsolidate compiler generated dependencies of target slam_gmapping[0m
+[0.129s] [100%] Built target slam_gmapping
+[0.149s] Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping' returned '0': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping -- -j4 -l4
+[0.197s] Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping
+[0.212s] -- Install configuration: ""
+[0.212s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/lib/slam_gmapping/slam_gmapping
+[0.213s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/launch
+[0.213s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/launch/slam_gmapping.launch.py
+[0.213s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/ament_index/resource_index/package_run_dependencies/slam_gmapping
+[0.214s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/ament_index/resource_index/parent_prefix_path/slam_gmapping
+[0.214s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/environment/ament_prefix_path.sh
+[0.214s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/environment/ament_prefix_path.dsv
+[0.214s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/environment/path.sh
+[0.215s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/environment/path.dsv
+[0.215s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/local_setup.bash
+[0.215s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/local_setup.sh
+[0.215s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/local_setup.zsh
+[0.215s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/local_setup.dsv
+[0.216s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.dsv
+[0.216s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/ament_index/resource_index/packages/slam_gmapping
+[0.216s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/cmake/slam_gmappingConfig.cmake
+[0.216s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/cmake/slam_gmappingConfig-version.cmake
+[0.216s] -- Up-to-date: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.xml
+[0.219s] Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping' returned '0': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping

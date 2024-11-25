@@ -1,0 +1,98 @@
+[0.046s] Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping
+[0.346s] -- The C compiler identification is GNU 11.4.0
+[0.691s] -- The CXX compiler identification is GNU 11.4.0
+[0.733s] -- Detecting C compiler ABI info
+[1.161s] -- Detecting C compiler ABI info - done
+[1.219s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.219s] -- Detecting C compile features
+[1.221s] -- Detecting C compile features - done
+[1.244s] -- Detecting CXX compiler ABI info
+[1.643s] -- Detecting CXX compiler ABI info - done
+[1.705s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.706s] -- Detecting CXX compile features
+[1.711s] -- Detecting CXX compile features - done
+[1.714s] [0m -fuse-ld=lld -Wl,--disable-new-dtags[0m
+[1.728s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.266s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.553s] -- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)
+[2.710s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.747s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.801s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.845s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.898s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.995s] -- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)
+[3.257s] -- Found tf2: 0.25.8 (/opt/ros/humble/share/tf2/cmake)
+[3.337s] -- Found tf2_ros: 0.25.8 (/opt/ros/humble/share/tf2_ros/cmake)
+[3.706s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[3.722s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[4.217s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[4.425s] -- Found FastRTPS: /opt/ros/humble/include  
+[4.714s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[4.788s] -- Looking for pthread.h
+[5.258s] -- Looking for pthread.h - found
+[5.267s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[5.624s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[5.630s] -- Found Threads: TRUE  
+[6.153s] -- Found tf2_geometry_msgs: 0.25.8 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[6.203s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[6.209s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[6.209s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[6.220s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[6.283s] -- Found visualization_msgs: 4.2.4 (/opt/ros/humble/share/visualization_msgs/cmake)
+[6.366s] -- Found openslam_gmapping: 0.1.2 (/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/share/openslam_gmapping/cmake)
+[6.377s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[6.636s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[6.637s] -- Configured cppcheck include dirs: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping/include
+[6.639s] -- Configured cppcheck exclude dirs and/or files: 
+[6.643s] -- Added test 'flake8' to check Python code syntax and style conventions
+[6.643s] -- Added test 'lint_cmake' to check CMake code style
+[6.643s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[6.646s] -- Added test 'uncrustify' to check C / C++ code style
+[6.647s] -- Configured uncrustify additional arguments: 
+[6.648s] -- Added test 'xmllint' to check XML markup files
+[6.651s] -- Configuring done
+[6.696s] -- Generating done
+[6.702s] -- Build files have been written to: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping
+[6.772s] Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping' returned '0': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping -DCMAKE_INSTALL_PREFIX=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping
+[6.787s] Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping -- -j4 -l4
+[7.075s] [ 50%] [32mBuilding CXX object CMakeFiles/slam_gmapping.dir/src/slam_gmapping.cpp.o[0m
+[8.406s] In file included from [01m[K/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping/include/slam_gmapping/slam_gmapping.h:38[m[K,
+[8.406s]                  from [01m[K/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping/src/slam_gmapping.cpp:24[m[K:
+[8.406s] [01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+[8.406s]    35 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead
+[8.406s]       |  [01;35m[K^~~~~~~[m[K
+[19.591s] In file included from [01m[K/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/include/gmapping/gridfastslam/gridslamprocessor.h:9[m[K,
+[19.592s]                  from [01m[K/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping/include/slam_gmapping/slam_gmapping.h:45[m[K,
+[19.592s]                  from [01m[K/home/joel-bansal/multi_bot_map_merging/bharat_ws4/src/slam_gmapping/slam_gmapping/src/slam_gmapping.cpp:24[m[K:
+[19.593s] [01m[K/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/include/gmapping/particlefilter/particlefilter.h:[m[K In function ‘[01m[Kvoid rle(OutputIterator&, const Iterator&, const Iterator&)[m[K’:
+[19.595s] [01m[K/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/include/gmapping/particlefilter/particlefilter.h:140:9:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+[19.596s]   140 |         [01;35m[Kif[m[K (count>0)
+[19.596s]       |         [01;35m[K^~[m[K
+[19.596s] [01m[K/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/include/gmapping/particlefilter/particlefilter.h:142:17:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+[19.597s]   142 |                 [01;36m[Kout[m[K++;
+[19.597s]       |                 [01;36m[K^~~[m[K
+[42.446s] [100%] [32m[1mLinking CXX executable slam_gmapping[0m
+[43.618s] [100%] Built target slam_gmapping
+[43.638s] Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping' returned '0': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping -- -j4 -l4
+[43.688s] Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping
+[43.702s] -- Install configuration: ""
+[43.702s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/lib/slam_gmapping/slam_gmapping
+[43.712s] -- Set runtime path of "/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/lib/slam_gmapping/slam_gmapping" to ""
+[43.712s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/launch
+[43.712s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/launch/slam_gmapping.launch.py
+[43.713s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/ament_index/resource_index/package_run_dependencies/slam_gmapping
+[43.713s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/ament_index/resource_index/parent_prefix_path/slam_gmapping
+[43.714s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/environment/ament_prefix_path.sh
+[43.714s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/environment/ament_prefix_path.dsv
+[43.714s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/environment/path.sh
+[43.715s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/environment/path.dsv
+[43.715s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/local_setup.bash
+[43.715s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/local_setup.sh
+[43.716s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/local_setup.zsh
+[43.716s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/local_setup.dsv
+[43.716s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.dsv
+[43.717s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/ament_index/resource_index/packages/slam_gmapping
+[43.717s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/cmake/slam_gmappingConfig.cmake
+[43.718s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/cmake/slam_gmappingConfig-version.cmake
+[43.718s] -- Installing: /home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/slam_gmapping/share/slam_gmapping/package.xml
+[43.723s] Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping' returned '0': AMENT_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping:/opt/ros/humble LD_LIBRARY_PATH=/home/joel-bansal/multi_bot_map_merging/bharat_ws4/install/openslam_gmapping/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/slam_gmapping
