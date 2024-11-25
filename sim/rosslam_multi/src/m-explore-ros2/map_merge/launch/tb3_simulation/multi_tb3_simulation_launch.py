@@ -39,14 +39,13 @@ from launch_ros.actions import Node
 import yaml
 
 def generate_robot_poses(number_of_robots):
-
     # Base poses for the robots
     base_poses = [
-        (0.0, 0.5, 0.01),
-        (-3.0, 1.5, 0.01),
-        (-2.0, 1.5, 0.01),
-        (-1.0, 1.0, 0.01), 
-        (-1.5, 1.0, 0.01),  
+        (1.0, 0.0, 0.01),
+        (-2.0, 1.0, 0.01),
+        (0.0, -2.0, 0.01),
+        (1.0, 1.0, 0.01), 
+        (-2.0, 0.0, 0.01),  
     ]
 
     # Ensure there are enough poses for the number of robots
@@ -64,36 +63,20 @@ def generate_robot_poses(number_of_robots):
         })
         robots_unknown_poses.append({
             "name": f"robot{i + 1}",
-            "x_pose": base_poses[i][0] - 1.0,  # Slightly offset x for unknown poses
+            "x_pose": base_poses[i][0] - 1.0,  
             "y_pose": base_poses[i][1],
             "z_pose": base_poses[i][2],
         })
 
     return robots_known_poses, robots_unknown_poses
 
-def declare_robot_params(context, *args, **kwargs):
-    # Base directory for config files
-    map_merge_dir = get_package_share_directory("multirobot_map_merge")
-    launch_dir_map_merge = os.path.join(map_merge_dir, "launch", "tb3_simulation")
-
-    # Create a list of DeclareLaunchArgument actions
-    actions = []
-    for i in range(7):
-        robot_name = f"robot{i + 1}"
-        param_file_arg = DeclareLaunchArgument(
-            f"{robot_name}_params_file",
-            default_value=os.path.join(
-                launch_dir_map_merge, "config", f"nav2_multirobot_params_{i + 1}.yaml"
-            ),
-            description=f"Full path to the ROS2 parameters file to use for {robot_name} launched nodes",
-        )
-        actions.append(param_file_arg)
-    return actions
-
 def generate_launch_description():
     # Get the launch directory
     bringup_dir = get_package_share_directory("nav2_bringup")
     launch_dir = os.path.join(bringup_dir, "launch")
+
+    # Create the launch description and populate
+    ld = LaunchDescription()
 
     # Get the launch directory for multirobot_map_merge where we have a modified launch files
     map_merge_dir = get_package_share_directory("multirobot_map_merge")
@@ -107,7 +90,16 @@ def generate_launch_description():
 
     robots_known_poses, robots_unknown_poses = generate_robot_poses(number_of_robots)
 
-    include_robot_params = OpaqueFunction(function=declare_robot_params)
+    for i in range(number_of_robots):
+        robot_name = f"robot{i + 1}"
+        param_file_arg = DeclareLaunchArgument(
+            f"{robot_name}_params_file",
+            default_value=os.path.join(
+                launch_dir_map_merge, "config", f"nav2_multirobot_params_{i + 1}.yaml"
+            ),
+            description=f"Full path to the ROS2 parameters file to use for {robot_name} launched nodes",
+        )
+        ld.add_action(param_file_arg)
 
     # Simulation settings
     world = LaunchConfiguration("world")
@@ -132,8 +124,8 @@ def generate_launch_description():
     # Declare the launch arguments
     declare_world_cmd = DeclareLaunchArgument(
         "world",
-        #default_value=os.path.join(launch_dir_map_merge, "worlds", "room4", "world_dynamic.model"),
-        default_value=os.path.join(launch_dir_map_merge, "worlds", "world_only.model"),
+        default_value=os.path.join(launch_dir_map_merge, "worlds", "room4", "world.model"),
+        #default_value=os.path.join(launch_dir_map_merge, "worlds", "world_only.model"),
         description="Full path to world file to load",
     )
 
@@ -149,29 +141,29 @@ def generate_launch_description():
         description="Full path to map file to load",
     )
 
-    declare_robot1_params_file_cmd = DeclareLaunchArgument(
-        "robot1_params_file",
-        default_value=os.path.join(
-            launch_dir_map_merge, "config", "nav2_multirobot_params_1.yaml"
-        ),
-        description="Full path to the ROS2 parameters file to use for robot1 launched nodes",
-    )
+    # declare_robot1_params_file_cmd = DeclareLaunchArgument(
+    #     "robot1_params_file",
+    #     default_value=os.path.join(
+    #         launch_dir_map_merge, "config", "nav2_multirobot_params_1.yaml"
+    #     ),
+    #     description="Full path to the ROS2 parameters file to use for robot1 launched nodes",
+    # )
 
-    declare_robot2_params_file_cmd = DeclareLaunchArgument(
-        "robot2_params_file",
-        default_value=os.path.join(
-            launch_dir_map_merge, "config", "nav2_multirobot_params_2.yaml"
-        ),
-        description="Full path to the ROS2 parameters file to use for robot2 launched nodes",
-    )
+    # declare_robot2_params_file_cmd = DeclareLaunchArgument(
+    #     "robot2_params_file",
+    #     default_value=os.path.join(
+    #         launch_dir_map_merge, "config", "nav2_multirobot_params_2.yaml"
+    #     ),
+    #     description="Full path to the ROS2 parameters file to use for robot2 launched nodes",
+    # )
 
-    declare_robot3_params_file_cmd = DeclareLaunchArgument(
-        "robot3_params_file",
-        default_value=os.path.join(
-            launch_dir_map_merge, "config", "nav2_multirobot_params_3.yaml"
-        ),
-        description="Full path to the ROS2 parameters file to use for robot3 launched nodes",
-    )
+    # declare_robot3_params_file_cmd = DeclareLaunchArgument(
+    #     "robot3_params_file",
+    #     default_value=os.path.join(
+    #         launch_dir_map_merge, "config", "nav2_multirobot_params_3.yaml"
+    #     ),
+    #     description="Full path to the ROS2 parameters file to use for robot3 launched nodes",
+    # )
 
     declare_autostart_cmd = DeclareLaunchArgument(
         "autostart",
@@ -204,13 +196,6 @@ def generate_launch_description():
         "slam_gmapping",
         default_value="False",
         description="Whether run a SLAM gmapping",
-    )
-
-    include_numbots_mapmerge = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(
-            launch_dir_map_merge, "from_map_server.launch.py"
-        )),
-        launch_arguments={'number_of_robots': LaunchConfiguration('number_of_robots')}.items()
     )
 
     # Start Gazebo with plugin providing the robot spawing service
@@ -398,9 +383,6 @@ def generate_launch_description():
 
         nav_instances_cmds.append(group)
 
-    # Create the launch description and populate
-    ld = LaunchDescription()
-
     # Declare the launch options
     ld.add_action(declare_simulator_cmd)
     ld.add_action(declare_world_cmd)
@@ -416,7 +398,6 @@ def generate_launch_description():
     ld.add_action(declare_slam_gmapping_cmd)
     ld.add_action(declare_known_init_poses_cmd)
     ld.add_action(declare_robot_sdf_cmd)
-    ld.add_action(include_robot_params)
 
     # Add the actions to start gazebo, robots and simulations
     ld.add_action(start_gazebo_cmd)
