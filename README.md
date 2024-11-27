@@ -32,3 +32,4 @@ Add unknown and known pos for additional bot and add the return later in the sam
 cd src/m-explore-ros2/map_merge/launch/rom_map_server.launch.py
 increase the number of bots.
 
+ros2 action send_goal /robot2/compute_path_to_pose nav2_msgs/action/ComputePathToPose "{goal: {pose: {position: {x: 1.0, y: 1.0, z: 0.0}, orientation: {z: 0.0, w: 1.0}}, header: {frame_id: 'map'}}}"
