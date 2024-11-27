@@ -1,36 +1,43 @@
 import rclpy
 from rclpy.node import Node
 from nav_msgs.msg import Odometry, OccupancyGrid
-from std_msgs.msg import String
 import numpy as np
+
 
 class OdomAndMapPublisher(Node):
     def __init__(self):
         super().__init__('odom_and_map_publisher')
 
-        # Subscriptions to odometry and map topics
+        # Subscriptions to odometry and map topics for 8 robots
         self.sub_robot1_odom = self.create_subscription(
-            Odometry, 
-            '/robot1/odom', 
-            self.robot1_odom_callback, 
-            10
+            Odometry, '/robot1/odom', self.robot1_odom_callback, 10
         )
         self.sub_robot2_odom = self.create_subscription(
-            Odometry, 
-            '/robot2/odom', 
-            self.robot2_odom_callback, 
-            10
+            Odometry, '/robot2/odom', self.robot2_odom_callback, 10
+        )
+        self.sub_robot3_odom = self.create_subscription(
+            Odometry, '/robot3/odom', self.robot3_odom_callback, 10
+        )
+        self.sub_robot4_odom = self.create_subscription(
+            Odometry, '/robot4/odom', self.robot4_odom_callback, 10
+        )
+        self.sub_robot5_odom = self.create_subscription(
+            Odometry, '/robot5/odom', self.robot5_odom_callback, 10
+        )
+        self.sub_robot6_odom = self.create_subscription(
+            Odometry, '/robot6/odom', self.robot6_odom_callback, 10
+        )
+        self.sub_robot7_odom = self.create_subscription(
+            Odometry, '/robot7/odom', self.robot7_odom_callback, 10
+        )
+        self.sub_robot8_odom = self.create_subscription(
+            Odometry, '/robot8/odom', self.robot8_odom_callback, 10
         )
         self.sub_map = self.create_subscription(
-            OccupancyGrid, 
-            '/map', 
-            self.map_callback, 
-            10
+            OccupancyGrid, '/map', self.map_callback, 10
         )
 
-        # Publishers for synchronized data
-        self.pub_robot1_synced = self.create_publisher(String, '/robot1/synced_data', 10)
-        self.pub_robot2_synced = self.create_publisher(String, '/robot2/synced_data', 10)
+        # Publisher for the updated map
         self.pub_updated_map = self.create_publisher(OccupancyGrid, '/updated_map', 10)
 
         # Timer to publish synchronized data at 1 Hz
@@ -39,94 +46,113 @@ class OdomAndMapPublisher(Node):
         # Variables to store the latest received data
         self.robot1_odom = None
         self.robot2_odom = None
+        self.robot3_odom = None
+        self.robot4_odom = None
+        self.robot5_odom = None
+        self.robot6_odom = None
+        self.robot7_odom = None
+        self.robot8_odom = None
         self.map_data = None
 
     def robot1_odom_callback(self, msg):
-        """Callback to store the latest odometry data from Robot 1."""
         self.robot1_odom = msg
 
     def robot2_odom_callback(self, msg):
-        """Callback to store the latest odometry data from Robot 2."""
         self.robot2_odom = msg
 
+    def robot3_odom_callback(self, msg):
+        self.robot3_odom = msg
+
+    def robot4_odom_callback(self, msg):
+        self.robot4_odom = msg
+
+    def robot5_odom_callback(self, msg):
+        self.robot5_odom = msg
+
+    def robot6_odom_callback(self, msg):
+        self.robot6_odom = msg
+
+    def robot7_odom_callback(self, msg):
+        self.robot7_odom = msg
+
+    def robot8_odom_callback(self, msg):
+        self.robot8_odom = msg
+
     def map_callback(self, msg):
-        """Callback to store the latest map data."""
         self.map_data = msg
 
-    def update_map_with_robots(self, map_matrix, robot1_pos, robot2_pos, resolution, origin):
-        """Update the map grid with robot positions."""
-        # Calculate the indices of the robots in the map grid
-        robot1_x_idx = int((robot1_pos.x - origin.x) / resolution)
-        robot1_y_idx = int((robot1_pos.y - origin.y) / resolution)
-
-        robot2_x_idx = int((robot2_pos.x - origin.x) / resolution)
-        robot2_y_idx = int((robot2_pos.y - origin.y) / resolution)
-
-        # Ensure indices are within the bounds of the map
+    def update_map_with_robots(self, map_matrix, robot_positions, resolution, origin):
+        """
+        Update the map grid with robot positions.
+        Args:
+            map_matrix: 2D numpy array of map data
+            robot_positions: List of robot positions (x, y)
+            resolution: Map resolution
+            origin: Origin position of the map
+        """
         map_height, map_width = map_matrix.shape
-        if 0 <= robot1_x_idx < map_width and 0 <= robot1_y_idx < map_height:
-            map_matrix[robot1_y_idx, robot1_x_idx] = 95  # Mark Robot 1 position
-        if 0 <= robot2_x_idx < map_width and 0 <= robot2_y_idx < map_height:
-            map_matrix[robot2_y_idx, robot2_x_idx] = 94 # Mark Robot 2 position
+
+        for idx, robot_pos in enumerate(robot_positions):
+            if robot_pos is not None:
+                x_idx = int((robot_pos.x - origin.x) / resolution)
+                y_idx = int((robot_pos.y - origin.y) / resolution)
+
+                # Ensure indices are within map bounds
+                if 0 <= x_idx < map_width and 0 <= y_idx < map_height:
+                    map_matrix[y_idx, x_idx] = 99 - idx  # Mark robot positions (e.g., 99, 98, ...)
 
         return map_matrix
 
     def publish_synced_data(self):
-        """Publish synchronized odometry and map data for both robots."""
-        if self.robot1_odom and self.robot2_odom and self.map_data:
-            # Process and format Robot 1 odometry data
-            robot1_pos = self.robot1_odom.pose.pose.position
-            robot1_info = f'[Robot1] Position: (x={robot1_pos.x}, y={robot1_pos.y}, z={robot1_pos.z})'
-
-            # Process and format Robot 2 odometry data
-            robot2_pos = self.robot2_odom.pose.pose.position
-            robot2_info = f'[Robot2] Position: (x={robot2_pos.x}, y={robot2_pos.y}, z={robot2_pos.z})'
-
-            # Extract and process map metadata and data
+        """Publish synchronized map data with available robot positions."""
+        if self.map_data:
+            # Extract map metadata and convert to numpy array
             map_width = self.map_data.info.width
             map_height = self.map_data.info.height
             map_resolution = self.map_data.info.resolution
-            map_origin = self.map_data.info.origin.position  # Origin of the map (x, y, z)
+            map_origin = self.map_data.info.origin.position  # Map origin (x, y, z)
 
-            # Convert the map data to a numpy array (map data is 1D)
             map_matrix = np.array(self.map_data.data).reshape((map_height, map_width))
 
+            # Collect robot positions from available odometry data
+            robot_positions = [
+                self.robot1_odom.pose.pose.position if self.robot1_odom else None,
+                self.robot2_odom.pose.pose.position if self.robot2_odom else None,
+                self.robot3_odom.pose.pose.position if self.robot3_odom else None,
+                self.robot4_odom.pose.pose.position if self.robot4_odom else None,
+                self.robot5_odom.pose.pose.position if self.robot5_odom else None,
+                self.robot6_odom.pose.pose.position if self.robot6_odom else None,
+                self.robot7_odom.pose.pose.position if self.robot7_odom else None,
+                self.robot8_odom.pose.pose.position if self.robot8_odom else None,
+            ]
+
             # Update the map with robot positions
-            updated_map = self.update_map_with_robots(map_matrix, robot1_pos, robot2_pos, map_resolution, map_origin)
+            updated_map = self.update_map_with_robots(
+                map_matrix, robot_positions, map_resolution, map_origin
+            )
 
-            # Create a new OccupancyGrid message with the updated map data
-            updated_map_data = updated_map.flatten().tolist()
-
+            # Publish the updated map
             updated_map_msg = OccupancyGrid()
-            updated_map_msg.header = self.map_data.header  # Retain original header information
-            updated_map_msg.info = self.map_data.info  # Retain original map info
-            updated_map_msg.data = updated_map_data  # Update map data with robot positions
-
-            # Publish the updated map (even if it didn't change)
+            updated_map_msg.header = self.map_data.header  # Retain original header
+            updated_map_msg.info = self.map_data.info  # Retain map metadata
+            updated_map_msg.data = updated_map.flatten().tolist()  # Flatten map data
             self.pub_updated_map.publish(updated_map_msg)
-            self.get_logger().info('Published updated map')
 
-            # Combine all data into strings for robots
-            combined_data_robot1 = f'{robot1_info}; Map published'
-            combined_data_robot2 = f'{robot2_info}; Map published'
-
-            # Publish the synchronized data
-            # self.pub_robot1_synced.publish(String(data=combined_data_robot1))
-            # self.pub_robot2_synced.publish(String(data=combined_data_robot2))
+            self.get_logger().info('Published updated map with robot positions.')
         else:
-            # Log a warning if some data is missing
-            self.get_logger().warning('Missing data: Ensure all topics are being published.')
+            self.get_logger().warning('Map data is missing. Cannot publish updated map.')
+
 
 def main(args=None):
-    """Main function to initialize and run the ROS2 node."""
     rclpy.init(args=args)
     node = OdomAndMapPublisher()
     try:
-        rclpy.spin(node)  # Keep the node running to listen for messages
+        rclpy.spin(node)
     except KeyboardInterrupt:
-        pass  # Handle graceful shutdown on Ctrl+C
+        pass
     finally:
         rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()
