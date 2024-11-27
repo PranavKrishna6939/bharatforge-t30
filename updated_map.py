@@ -67,7 +67,7 @@ class OdomAndMapPublisher(Node):
         if 0 <= robot1_x_idx < map_width and 0 <= robot1_y_idx < map_height:
             map_matrix[robot1_y_idx, robot1_x_idx] = 95  # Mark Robot 1 position
         if 0 <= robot2_x_idx < map_width and 0 <= robot2_y_idx < map_height:
-            map_matrix[robot2_y_idx, robot2_x_idx] = 95 # Mark Robot 2 position
+            map_matrix[robot2_y_idx, robot2_x_idx] = 94 # Mark Robot 2 position
 
         return map_matrix
 
