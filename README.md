@@ -8,6 +8,9 @@ ros2 launch multirobot_map_merge multi_tb3_simulation_launch.py slam_toolbox:=Tr
 ros2 launch multirobot_map_merge map_merge.launch.py
 
 rviz2 -d ~/gitrepo/rosslam_ws/src/m-explore-ros2/map_merge/launch/map_merge.rviz
+
+python3 updated_map.py
+
 ```
 
 ## FILES FOR CHANGES
