@@ -47,21 +47,13 @@ class ExplorationEnv(Node):
         self.bot_positions = [None for _ in range(self.number_of_bots)]
         input_size = MAP_SIZE * MAP_SIZE  # Flattened map
         self.model = ActorCritic(input_size, self.number_of_bots)
-        self.model.load_state_dict(torch.load('model_weights.pth', map_location=torch.device('cpu')))
+        # self.model.load_state_dict(torch.load('model_weights.pth', map_location=torch.device('cpu')))
+        
         self.model.eval()
-        self.action_clients = []
-        for i in range(self.number_of_bots):
-            action_server_name = f'/robot{i+1}/navigate_to_pose'
-            self.get_logger().info(f'Using action server: {action_server_name}')
-
-            # Initialize the Action Client
-            action_client = ActionClient(self, NavigateToPose, action_server_name)
-            self.action_clients.append(action_client)
-
-            # Wait for the action server to be available
-            self.get_logger().info('Waiting for action server...')
-            action_client.wait_for_server()
-            self.get_logger().info('Action server available.')
+        self.action_clients = [
+            ActionClient(self, NavigateToPose, f'/robot{i+1}/navigate_to_pose')
+            for i in range(self.number_of_bots)
+        ]
         self.get_logger().info('ExplorationEnv node has been started.')
 
     def map_callback(self, msg):
@@ -133,7 +125,7 @@ class ExplorationEnv(Node):
     def pixel_to_map_coordinates(self, x_pixel, y_pixel, msg_info=None):
         if msg_info is None:
             return 0.0, 0.0
-        resolution = msg_info.resolution
+        resolution = 0.05
         origin_x = msg_info.origin.position.x
         origin_y = msg_info.origin.position.y
         map_x = x_pixel * resolution + origin_x
@@ -145,42 +137,32 @@ class ExplorationEnv(Node):
         goal_msg = NavigateToPose.Goal()
         goal_msg.pose = pose
 
-        self.get_logger().info(f'Sending goal to robot {robot_index+1} to navigate to the specified pose...')
-
-        # Send the goal asynchronously
-        send_goal_future = action_client.send_goal_async(
-            goal_msg, feedback_callback=lambda feedback: self.feedback_callback(feedback, robot_index)
-        )
-        send_goal_future.add_done_callback(lambda future: self.goal_response_callback(future, robot_index))
-
-    def goal_response_callback(self, future, robot_index):
-        goal_handle = future.result()
-        if not goal_handle.accepted:
-            self.get_logger().error(f'Goal rejected by the action server for robot {robot_index+1}.')
+        if not action_client.wait_for_server(timeout_sec=5.0):
+            self.get_logger().error(f'Action server for robot {robot_index+1} not available.')
             return
 
-        self.get_logger().info(f'Goal accepted by the action server for robot {robot_index+1}.')
+        future = action_client.send_goal_async(goal_msg)
+        rclpy.spin_until_future_complete(self, future)
+        goal_handle = future.result()
 
-        # Get the result asynchronously
-        get_result_future = goal_handle.get_result_async()
-        get_result_future.add_done_callback(lambda future: self.get_result_callback(future, robot_index))
+        if not goal_handle.accepted:
+            self.get_logger().error(f'Goal rejected for robot {robot_index+1}.')
+            return
 
-    def get_result_callback(self, future, robot_index):
-        result = future.result().result
-        status = future.result().status
+        self.get_logger().info(f'Goal accepted for robot {robot_index+1}.')
 
-        if status == 4:
-            self.get_logger().info(f'Robot {robot_index+1} reached the goal successfully!')
+        result_future = goal_handle.get_result_async()
+        rclpy.spin_until_future_complete(self, result_future)
+        result = result_future.result()
+
+        if result.status == 4:
+            self.get_logger().info(f'Robot {robot_index+1} reached the goal.')
         else:
-            self.get_logger().error(f'Robot {robot_index+1} failed to reach the goal with status: {status}')
-
-    def feedback_callback(self, feedback, robot_index):
-        # Implement feedback handling if needed
-        pass
+            self.get_logger().error(f'Robot {robot_index+1} failed to reach the goal.')
 
 def main(args=None):
     rclpy.init(args=args)
-    number_of_bots = 3  
+    number_of_bots = 2
     exploration_env = ExplorationEnv(number_of_bots)
     try:
         rclpy.spin(exploration_env)
