@@ -173,6 +173,10 @@ class OdomAndMapPublisher(Node):
             updated_map_msg.header = self.map_data.header  # Retain original header
             updated_map_msg.info = self.map_data.info  # Retain map metadata
             updated_map_msg.data = updated_map.flatten().tolist()  # Flatten map data
+            
+            updated_map_msg.info.width = 900
+            updated_map_msg.info.height = 900
+            
             self.pub_updated_map.publish(updated_map_msg)
 
             self.get_logger().info('Published updated map with robot positions.')
