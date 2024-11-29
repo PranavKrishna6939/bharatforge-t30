@@ -15,18 +15,37 @@ WAIT_TIME = 5  # Seconds to wait after reaching goals
 
 # Define the neural network model (Actor-Critic)
 class ActorCritic(nn.Module):
-    def __init__(self, input_size, num_bots=1):
+    def __init__(self, num_inputs=4, num_bots=2):
         super(ActorCritic, self).__init__()
         self.num_bots = num_bots
-        self.fc = nn.Linear(input_size, 256)
-        self.policy_head = nn.Linear(256, num_bots * 2)  # x and y for each bot
-        self.value_head = nn.Linear(256, 1)
 
-    def forward(self, x, bot_positions):
+        self.conv1 = nn.Conv2d(num_inputs, 16, kernel_size=5, stride=2)
+        self.conv2 = nn.Conv2d(16, 32, kernel_size=5, stride=2)
+        self.conv3 = nn.Conv2d(32, 64, kernel_size=5, stride=2)
+
+        # Adaptive pooling to handle variable input sizes
+        self.adaptive_pool = nn.AdaptiveAvgPool2d((9, 9))
+
+        self.fc = nn.Linear(64 * 9 * 9, 256)
+
+        self.actor = nn.Linear(256, self.num_bots * 2)  # Output pred_x and pred_y for each bot
+        self.critic = nn.Linear(256, 1)
+
+    def forward(self, x):
+        x = x.unsqueeze(0)  # Add batch dimension
+        x = torch.relu(self.conv1(x))
+        x = torch.relu(self.conv2(x))
+        x = torch.relu(self.conv3(x))
+
+        x = self.adaptive_pool(x)
+        x = x.view(x.size(0), -1)
+
         x = torch.relu(self.fc(x))
-        policy = self.policy_head(x)
-        value = self.value_head(x)
-        return policy, value
+
+        actor_output = self.actor(x)  # Direct output without activation
+        value = self.critic(x)
+
+        return actor_output, value
 
 def quaternion_from_euler(roll, pitch, yaw):
     import math
@@ -54,8 +73,9 @@ class ExplorationEnv(Node):
         self.map_data = None
         self.map_info = None
         self.bot_positions = [None for _ in range(self.number_of_bots)]
-        input_size = MAP_SIZE * MAP_SIZE  # Flattened map
-        self.model = ActorCritic(input_size, self.number_of_bots)
+        input_channels = 4  # Example number of input channels
+        self.model = ActorCritic(num_inputs=input_channels, num_bots=self.number_of_bots)
+        self.model.load_state_dict(torch.load('model.pth'))
         self.model.eval()
         self.get_logger().info('ExplorationEnv node has been started.')
 
@@ -101,27 +121,50 @@ class ExplorationEnv(Node):
                 self.get_logger().warn(f'Robot {i+1} position not found in the map.')
 
         # Prepare input for the model
-        flattened_map = self.map_data.flatten().astype(np.float32)
-        input_tensor = torch.tensor(flattened_map).unsqueeze(0)  # Shape: [1, input_size]
-        bot_positions_flat = np.array(self.bot_positions).flatten().astype(np.float32)
-        bot_positions_tensor = torch.tensor(bot_positions_flat).unsqueeze(0)  # Shape: [1, num_bots*2]
+        state_channels = np.zeros((4, self.map_data.shape[0], self.map_data.shape[1]), dtype=np.float32)
+        state_channels[0][self.map_data == -1] = 1.0  # Unexplored
+        state_channels[1][self.map_data == 0] = 1.0    # Free space
+        state_channels[2][self.map_data == 100] = 1.0  # Obstacles
+        for idx in range(self.number_of_bots):
+            state_channels[3][self.map_data == (99 - idx)] = 1.0  # Bots
 
-        # Get next positions from the model
+        state_tensor = torch.FloatTensor(state_channels)
+
         with torch.no_grad():
-            actions, _ = self.model(input_tensor, bot_positions_tensor)
-        actions_np = actions.squeeze(0).numpy().reshape(self.number_of_bots, 2)
+            output, _ = self.model(state_tensor)
+        output = output.view(self.number_of_bots, 2)
 
-        for i in range(self.number_of_bots):
-            print(f"Robot {i+1} predicted pixel position: x={actions_np[i][0]}, y={actions_np[i][1]}")
+        target_positions = []
+        free_positions = np.argwhere(self.map_data == 0)  # Positions of free explored pixels
 
-        # Convert pixel positions to map coordinates and send navigation goals
-        for i in range(self.number_of_bots):
-            x_pixel, y_pixel = actions_np[i]
+        if len(free_positions) > 0:
+            map_height, map_width = self.map_data.shape
+            normalized_free_positions = free_positions / np.array([map_height - 1, map_width - 1])
+
+            for idx in range(self.number_of_bots):
+                pred_x = output[idx, 0].item() % 1.0
+                pred_y = output[idx, 1].item() % 1.0
+
+                # Compute distances to normalized free positions
+                distances = np.linalg.norm(normalized_free_positions - np.array([pred_x, pred_y]), axis=1)
+                nearest_idx = np.argmin(distances)
+                map_x, map_y = free_positions[nearest_idx]
+                target_positions.append((int(map_x), int(map_y)))
+        else:
+            # No free explored pixels available
+            for idx in range(self.number_of_bots):
+                map_x, map_y = self.bot_positions[idx]
+                target_positions.append((int(map_x), int(map_y)))
+
+        # Convert target_positions to x_pixel and y_pixel and send goals
+        for i, (map_x, map_y) in enumerate(target_positions):
+            x_pixel = map_x*0.01
+            y_pixel = map_y*0.01
             robot_namespace = f'/robot{i+1}'
-            x, y, theta = x_pixel, y_pixel, 0
+            theta = 0
 
             # Send the navigation goal
-            self.send_goal(robot_namespace, x, y, theta)
+            self.send_goal(robot_namespace, x_pixel, y_pixel, theta)
 
         # Wait additional seconds for environment to localize and map
         self.get_logger().info(f'Waiting for {WAIT_TIME} seconds...')
