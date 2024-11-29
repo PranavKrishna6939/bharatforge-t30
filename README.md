@@ -41,6 +41,8 @@ ros2 action send_goal /robot2/compute_path_to_pose nav2_msgs/action/ComputePathT
 
 ## For YOLO
 In turtlebot3 replace the waffle folder
+
 Run the above given command
+
 And to start saving the cordinates of object run final_coord.py --robot k, for kth robot
 
