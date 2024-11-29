@@ -287,7 +287,7 @@ class ExplorationEnv:
         unexplored_mask = (smoothed_map == -1)
 
         # Define a 3x3 structuring element for dilation
-        struct_element = np.ones((3, 3), dtype=np.uint8)
+        struct_element = np.ones((5, 5), dtype=np.uint8)
 
         # Dilate the free space mask to find its neighbors
         free_space_dilated = cv2.dilate(free_space_mask.astype(np.uint8), struct_element, iterations=1)
