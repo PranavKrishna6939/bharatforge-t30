@@ -158,8 +158,8 @@ class ExplorationEnv(Node):
 
         # Convert target_positions to x_pixel and y_pixel and send goals
         for i, (map_x, map_y) in enumerate(target_positions):
-            x_pixel = map_x*0.01
-            y_pixel = map_y*0.01
+            x_pixel = (450-map_y)*0.05
+            y_pixel = (450-map_x)*0.05
             robot_namespace = f'/robot{i+1}'
             theta = 0
 
@@ -188,15 +188,28 @@ class ExplorationEnv(Node):
 
         self.get_logger().info(f'Sending goal to navigate to the specified pose: x={x}, y={y}, theta={theta} degrees')
 
-        # Execute the command synchronously
-        result = subprocess.run(command, capture_output=True, text=True)
-
-        if result.returncode == 0:
+        try:
+            # Execute the command with a timeout of 20 seconds
+            result = subprocess.run(command, capture_output=True, text=True, timeout=20)
             self.get_logger().info('Goal sent successfully.')
             self.get_logger().info(result.stdout)
-        else:
+        except subprocess.TimeoutExpired:
+            self.get_logger().error('Navigation goal timed out after 20 seconds. Aborting the goal.')
+            # Extract goal_id from the previous command if possible
+            # Here, assume goal_id is not available and log the abort action
+            abort_command = [
+                'ros2', 'action', 'cancel', '--all', 'nav2_msgs/action/NavigateToPose'
+            ]
+            abort_result = subprocess.run(abort_command, capture_output=True, text=True)
+            if abort_result.returncode == 0:
+                self.get_logger().info('All navigation goals aborted successfully.')
+                self.get_logger().info(abort_result.stdout)
+            else:
+                self.get_logger().error('Failed to abort navigation goals.')
+                self.get_logger().error(abort_result.stderr)
+        except subprocess.CalledProcessError as e:
             self.get_logger().error('Failed to send goal.')
-            self.get_logger().error(result.stderr)
+            self.get_logger().error(e.stderr)
 
     def destroy_node(self):
         super().destroy_node()
