@@ -46,3 +46,9 @@ Run the above given command
 
 And to start saving the cordinates of object run final_coord.py --robot k, for kth robot
 
+All the yolos will make a text file and store the detected objects....now run a node to publish those objects
+
+ros2 run your_package_name dynamic_object_publisher --ros-args -p log_file_path:=src/detected_objects.txt
+
+
+
