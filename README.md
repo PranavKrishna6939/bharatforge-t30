@@ -42,11 +42,13 @@ ros2 action send_goal /robot2/compute_path_to_pose nav2_msgs/action/ComputePathT
 ## For YOLO
 In turtlebot3 replace the waffle folder
 
-Run the above given command
+Then, Run the above given command
 
-And to start saving the cordinates of object run final_coord.py --robot k, for kth robot
+And to start saving the cordinates of object run final_coord.py --robot k, for kth robot in the common_text_file file workspace
 
 All the yolos will make a text file and store the detected objects....now run a node to publish those objects
+
+(Assumption is that no 2 same objects will be present within 0.1 m range of one)
 
 ros2 run your_package_name dynamic_object_publisher --ros-args -p log_file_path:=src/detected_objects.txt
 
