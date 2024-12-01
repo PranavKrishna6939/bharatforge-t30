@@ -6,6 +6,7 @@ from rclpy.node import Node
 from nav_msgs.msg import OccupancyGrid
 import subprocess
 import time
+import threading
 
 # Environment parameters
 MAP_SIZE = 900
@@ -157,14 +158,22 @@ class ExplorationEnv(Node):
                 target_positions.append((int(map_x), int(map_y)))
 
         # Convert target_positions to x_pixel and y_pixel and send goals
+
+        threads = []
         for i, (map_x, map_y) in enumerate(target_positions):
             y_pixel = (map_x-450)*0.05
             x_pixel = (map_y-450)*0.05
             robot_namespace = f'/robot{i+1}'
             theta = 0
 
-            # Send the navigation goal
-            self.send_goal(robot_namespace, x_pixel, y_pixel, theta)
+            # Create a thread to send the navigation goal
+            thread = threading.Thread(target=self.send_goal, args=(robot_namespace, x_pixel, y_pixel, theta))
+            threads.append(thread)
+            thread.start()
+
+        # Wait for all threads to complete
+        for thread in threads:
+            thread.join()
 
         # Wait additional seconds for environment to localize and map
         self.get_logger().info(f'Waiting for {WAIT_TIME} seconds...')
@@ -216,7 +225,7 @@ class ExplorationEnv(Node):
 
 
 def main(args=None):
-    rclpy.init(args=args)  # Ensure ROS 2 is initialized first
+    rclpy.init(args=args)  
     number_of_bots = 2
     exploration_env = ExplorationEnv(number_of_bots)
     try:
@@ -229,3 +238,4 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
