@@ -50,7 +50,10 @@ All the yolos will make a text file and store the detected objects....now run a 
 
 (Assumption is that no 2 same objects will be present within 0.1 m range of one)
 
-ros2 run your_package_name dynamic_object_publisher --ros-args -p log_file_path:=src/detected_objects.txt
+ros2 run dynamic_object_publisher dynamic_object_publisher --ros-args -p log_file_path:=src/detected_objects.txt
 
+For running listening use the following (it subscribes map and yolo data and publishes updated map and object coordinates)
+
+ros2 run odom_and_map_publisher odom_and_map_publisher
 
 
