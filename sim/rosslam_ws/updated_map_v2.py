@@ -77,8 +77,8 @@ class OdomAndMapPublisher(Node):
         map_height, map_width = map_matrix.shape
         for idx, robot_pos in enumerate(robot_positions):
             if robot_pos is not None:
-                x_idx = int((robot_pos.x - origin.x) / resolution)
-                y_idx = int((robot_pos.y - origin.y) / resolution)
+                x_idx = int((robot_pos.x - origin.x) / resolution)+450
+                y_idx = int((robot_pos.y - origin.y) / resolution)+450
                 # Ensure indices are within map bounds
                 if 0 <= x_idx < map_width and 0 <= y_idx < map_height:
                     map_matrix[y_idx, x_idx] = 99 - idx  # Mark robot positions (e.g., 99, 98, ...)

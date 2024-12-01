@@ -158,8 +158,10 @@ class ExplorationEnv(Node):
 
         # Convert target_positions to x_pixel and y_pixel and send goals
         for i, (map_x, map_y) in enumerate(target_positions):
-            x_pixel = (450-map_y)*0.05
-            y_pixel = (450-map_x)*0.05
+            # x_pixel = (450-map_y)*0.05
+            # y_pixel = (450-map_x)*0.05
+            x_pixel = (map_x-450)*0.05
+            y_pixel = (map_y-450)*0.05
             robot_namespace = f'/robot{i+1}'
             theta = 0
 

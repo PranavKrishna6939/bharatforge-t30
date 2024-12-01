@@ -41,8 +41,8 @@ import yaml
 def generate_robot_poses(number_of_robots):
     # Base poses for the robots
     base_poses = [
-        (1.0, 0.0, 0.01),
-        (-2.0, 1.0, 0.01),
+        (0.5, 0.0, 0.01),
+        (-0.2, 0.0, 0.01),
         (0.0, -2.0, 0.01),
         (1.0, 1.0, 0.01), 
         (-2.0, 0.0, 0.01),  
@@ -124,8 +124,9 @@ def generate_launch_description():
     # Declare the launch arguments
     declare_world_cmd = DeclareLaunchArgument(
         "world",
-        default_value=os.path.join(launch_dir_map_merge, "worlds", "room4", "world.model"),
-        #default_value=os.path.join(launch_dir_map_merge, "worlds", "world_only.model"),
+        default_value=os.path.join(launch_dir_map_merge, "worlds", "no_roof_small_warehouse.world"),
+        #default_value=os.path.join(launch_dir_map_merge, "worlds", "office_small.world"),
+        #default_value=os.path.join(launch_dir_map_merge, "worlds", "room2", "world.model"),
         description="Full path to world file to load",
     )
 
@@ -137,7 +138,8 @@ def generate_launch_description():
 
     declare_map_yaml_cmd = DeclareLaunchArgument(
         "map",
-        default_value=os.path.join(bringup_dir, "maps", "turtlebot3_world.yaml"),
+        #default_value=os.path.join(bringup_dir, "maps", "turtlebot3_world.yaml"),
+        default_value=os.path.join(launch_dir_map_merge, "maps", "map.yaml"),
         description="Full path to map file to load",
     )
 

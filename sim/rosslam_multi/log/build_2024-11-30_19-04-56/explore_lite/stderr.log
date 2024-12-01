@@ -1,0 +1,1 @@
+[0mCMake Error: The current CMakeCache.txt directory /home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite/CMakeCache.txt is different than the directory /home/jjbigdub/gitrepo/rosslam_ws3/build/explore_lite where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m

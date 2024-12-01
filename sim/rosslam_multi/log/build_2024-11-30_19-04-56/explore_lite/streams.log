@@ -1,0 +1,76 @@
+[0.020s] Invoking command in '/home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jjbigdub/ros2_ws/install/math1:/home/jjbigdub/urdf_ws/install/rocker_description:/opt/ros/humble /usr/bin/cmake --build /home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite -- -j16 -l16
+[0.039s] [0mCMake Error: The current CMakeCache.txt directory /home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite/CMakeCache.txt is different than the directory /home/jjbigdub/gitrepo/rosslam_ws3/build/explore_lite where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m
+[0.087s] -- BuilD for ROS2: humble
+[0.087s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.211s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.246s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.248s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.255s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.266s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.278s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.310s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.313s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.428s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.476s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.502s] -- Found tf2_ros: 0.25.8 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.581s] -- Found tf2_geometry_msgs: 0.25.8 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.583s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.584s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.586s] -- Found nav2_msgs: 1.1.16 (/opt/ros/humble/share/nav2_msgs/cmake)
+[0.618s] -- Found map_msgs: 2.1.0 (/opt/ros/humble/share/map_msgs/cmake)
+[0.631s] -- Found visualization_msgs: 4.2.4 (/opt/ros/humble/share/visualization_msgs/cmake)
+[0.648s] -- Found nav2_costmap_2d: 1.1.16 (/opt/ros/humble/share/nav2_costmap_2d/cmake)
+[0.752s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.822s] -- Found ament_cmake_gtest: 1.3.10 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[0.822s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[0.839s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.840s] -- Configured cppcheck include dirs: /home/jjbigdub/gitrepo/rosslam_ws3/src/m-explore-ros2/explore/include;$<BUILD_INTERFACE:/home/jjbigdub/gitrepo/rosslam_ws3/src/m-explore-ros2/explore/include>
+[0.840s] -- Configured cppcheck exclude dirs and/or files: 
+[0.840s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.840s] -- Added test 'lint_cmake' to check CMake code style
+[0.841s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.842s] -- Added test 'uncrustify' to check C / C++ code style
+[0.842s] -- Configured uncrustify additional arguments: 
+[0.843s] -- Added test 'xmllint' to check XML markup files
+[0.844s] -- Configuring done
+[0.946s] -- Generating done
+[0.948s] -- Build files have been written to: /home/jjbigdub/gitrepo/rosslam_ws3/build/explore_lite
+[0.992s] [35m[1mConsolidate compiler generated dependencies of target gtest_main[0m
+[0.992s] [35m[1mConsolidate compiler generated dependencies of target gtest[0m
+[0.996s] [35m[1mConsolidate compiler generated dependencies of target explore[0m
+[1.008s] [ 40%] Built target gtest
+[1.008s] [ 40%] Built target gtest_main
+[1.021s] [35m[1mConsolidate compiler generated dependencies of target test_explore[0m
+[1.032s] [ 80%] Built target explore
+[1.037s] [100%] Built target test_explore
+[1.050s] Invoked command in '/home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jjbigdub/ros2_ws/install/math1:/home/jjbigdub/urdf_ws/install/rocker_description:/opt/ros/humble /usr/bin/cmake --build /home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite -- -j16 -l16
+[1.103s] Invoking command in '/home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jjbigdub/ros2_ws/install/math1:/home/jjbigdub/urdf_ws/install/rocker_description:/opt/ros/humble /usr/bin/cmake --install /home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite
+[1.111s] -- Install configuration: ""
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/include/explore/
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/include/explore//costmap_tools.h
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/include/explore//costmap_client.h
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/include/explore//frontier_search.h
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/include/explore//explore.h
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/config
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/config/params.yaml
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/config/params_costmap.yaml
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/launch
+[1.112s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/launch/explore.launch.py
+[1.113s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/lib/explore_lite/explore
+[1.113s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/ament_index/resource_index/package_run_dependencies/explore_lite
+[1.113s] -- Installing: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/ament_index/resource_index/parent_prefix_path/explore_lite
+[1.114s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/environment/ament_prefix_path.sh
+[1.114s] -- Installing: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/environment/ament_prefix_path.dsv
+[1.114s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/environment/path.sh
+[1.114s] -- Installing: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/environment/path.dsv
+[1.114s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/local_setup.bash
+[1.114s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/local_setup.sh
+[1.114s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/local_setup.zsh
+[1.114s] -- Installing: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/local_setup.dsv
+[1.114s] -- Installing: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/package.dsv
+[1.115s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/ament_index/resource_index/packages/explore_lite
+[1.115s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.115s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/cmake/explore_liteConfig.cmake
+[1.115s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/cmake/explore_liteConfig-version.cmake
+[1.115s] -- Up-to-date: /home/jjbigdub/gitrepo/rosslam_ws3/install/explore_lite/share/explore_lite/package.xml
+[1.118s] Invoked command in '/home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jjbigdub/ros2_ws/install/math1:/home/jjbigdub/urdf_ws/install/rocker_description:/opt/ros/humble /usr/bin/cmake --install /home/jjbigdub/gitrepo/bharatforge-iitk/sim/rosslam_multi/build/explore_lite
