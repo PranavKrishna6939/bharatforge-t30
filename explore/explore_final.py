@@ -273,7 +273,7 @@ class ExplorationEnv:
         return self.get_state(), rewards, done, prev_bot_positions
 
 class ActorCritic(nn.Module):
-    def __init__(self, num_inputs=4, num_bots=5):
+    def __init__(self, num_inputs, num_bots):
         super(ActorCritic, self).__init__()
         self.num_bots = num_bots
 
@@ -307,8 +307,7 @@ class ActorCritic(nn.Module):
 
 def main():
     num_bots = 2
-    num_channels = 4
-    model = ActorCritic(num_inputs=num_channels, num_bots=num_bots)
+    model = ActorCritic(num_inputs=4, num_bots=num_bots)
     optimizer = optim.Adam(model.parameters(), lr=1e-4)
     plt.ion()
     for episode in range(100):
@@ -319,7 +318,7 @@ def main():
         step_count = 0
         while not done:
             step_count += 1
-            state_channels = np.zeros((num_channels, state.shape[0], state.shape[1]), dtype=np.float32)
+            state_channels = np.zeros((4, state.shape[0], state.shape[1]), dtype=np.float32)
             state_channels[0][state == -1] = 1.0  # Unexplored
             state_channels[1][state == 0] = 1.0   # Free space
             state_channels[2][state == 100] = 1.0  # Obstacles
@@ -406,6 +405,7 @@ def main():
                 print(f"Episode {episode+1}, Step {step_count}, Cumulative Reward: {cumulative_reward}")
 
         print(f"Episode {episode+1}/100, Total Reward: {cumulative_reward}")
+        torch.save(model.state_dict(), 'model.pth')
 
     plt.ioff()
     plt.show()
