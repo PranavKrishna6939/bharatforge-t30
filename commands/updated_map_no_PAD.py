@@ -65,6 +65,25 @@ class OdomAndMapPublisher(Node):
         self.robot8_odom = msg
     def map_callback(self, msg):
         self.map_data = msg
+    # def update_map_with_robots(self, map_matrix, robot_positions, resolution, origin):
+    #     """
+    #     Update the map grid with robot positions.
+    #     Args:
+    #         map_matrix: 2D numpy array of map data
+    #         robot_positions: List of robot positions (x, y)
+    #         resolution: Map resolution
+    #         origin: Origin position of the map
+    #     """
+    #     map_height, map_width = map_matrix.shape
+    #     for idx, robot_pos in enumerate(robot_positions):
+    #         if robot_pos is not None:
+    #             x_idx = int((robot_pos.x - origin.x) / resolution)
+    #             y_idx = int((robot_pos.y - origin.y) / resolution)
+    #             # Ensure indices are within map bounds
+    #             if 0 <= x_idx < map_width and 0 <= y_idx < map_height:
+    #                 map_matrix[y_idx, x_idx] = 99 - idx  # Mark robot positions (e.g., 99, 98, ...)
+    #     return map_matrix
+
     def update_map_with_robots(self, map_matrix, robot_positions, resolution, origin):
         """
         Update the map grid with robot positions.
@@ -77,45 +96,16 @@ class OdomAndMapPublisher(Node):
         map_height, map_width = map_matrix.shape
         for idx, robot_pos in enumerate(robot_positions):
             if robot_pos is not None:
-                x_idx = int((robot_pos.x - origin.x) / resolution)
-                y_idx = int((robot_pos.y - origin.y) / resolution)
+                print(f"robot_pos {idx+1}: ",robot_pos.x, robot_pos.y)
+                x_idx = int((robot_pos.y) / resolution) + map_height // 2
+                y_idx = int((robot_pos.x) / resolution) + map_width // 2
                 # Ensure indices are within map bounds
-                if 0 <= x_idx < map_width and 0 <= y_idx < map_height:
-                    map_matrix[y_idx, x_idx] = 99 - idx  # Mark robot positions (e.g., 99, 98, ...)
+                # if(idx == 1):
+                #     print("##################",x_idx,y_idx)
+                if 0 <= x_idx <= map_height and 0 <= y_idx <= map_width:
+                    map_matrix[x_idx, y_idx] = 99 - idx  # Mark robot positions (e.g., 99, 98, ...)
+        # print("shape of map: ",  map_height)
         return map_matrix
-    
-    def pad_map_to_900x900(self, map_matrix):
-        """
-        Pad the map matrix symmetrically with -1 to make it 900x900.
-        Args:
-            map_matrix: 2D numpy array of map data
-        Returns:
-            Padded map matrix of size 900x900
-        """
-        current_height, current_width = map_matrix.shape
-        target_height, target_width = 900, 900
-
-        # Calculate the padding needed
-        pad_height = target_height - current_height
-        pad_width = target_width - current_width
-
-        if pad_height < 0 or pad_width < 0:
-            raise ValueError("Current map is larger than the target size of 900x900.")
-
-        # Calculate padding for each side
-        pad_top = pad_height // 2
-        pad_bottom = pad_height - pad_top
-        pad_left = pad_width // 2
-        pad_right = pad_width - pad_left
-
-        # Apply padding
-        padded_map = np.pad(
-            map_matrix,
-            ((pad_top, pad_bottom), (pad_left, pad_right)),
-            mode='constant',
-            constant_values=-1,
-        )
-        return padded_map
 
     def publish_synced_data(self):
         """Publish synchronized map data with available robot positions."""
