@@ -56,7 +56,7 @@ For running listening use the following (it subscribes map and yolo data and pub
 
 ros2 run odom_and_map_publisher odom_and_map_publisher
 
-For RL node
+For RL workspace
 
 ros2 run exploration_env exploration_env
 
