@@ -15,8 +15,12 @@ python3 updated_map.py
 Navigate to a given point
 
 ros2 action send_goal /robot1/navigate_to_pose nav2_msgs/action/NavigateToPose "{pose: {header: {frame_id: 'map'}, pose: {position: {x: 5.0, y: 2.0, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}}"
-
 ```
+###
+NO LONGER NEEDED TO EXPORT THE FIRST LINE
+
+Add turtlebot3_waffle in same folder as models and just export the second line
+###
 
 ## FILES FOR CHANGES
 
