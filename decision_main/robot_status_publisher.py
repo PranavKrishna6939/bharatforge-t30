@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 import yaml
+import re  # Import regex module
 
 class RobotStatusPublisher(Node):
 
@@ -56,21 +57,29 @@ class RobotStatusPublisher(Node):
         """Callback function to update robot status when a closest robot is selected."""
         closest_robot_info = msg.data
         # The message should be in the format: "robot_name, Goal: x=..., y=..."
-        robot_name = closest_robot_info.split(",")[0]  # Extract the robot name from the message
+        robot_name = closest_robot_info.split(",")[0].strip()  # Extract the robot name from the message
 
         # Change the status of the closest robot to False (not free)
         if robot_name in self.robot_status:
             self.robot_status[robot_name] = False
             self.get_logger().info(f"Robot {robot_name} marked as not free.")
+        else:
+            self.get_logger().error(f"Received status for unknown robot: '{robot_name}'.")
 
     def robot_reached_goal_callback(self, msg):
         """Callback function to update robot status when a robot reaches the goal."""
-        robot_name = msg.data.strip()  # Extract the robot name from the message
-
-        # Change the status of the robot to True (free)
-        if robot_name in self.robot_status:
-            self.robot_status[robot_name] = True
-            self.get_logger().info(f"Robot {robot_name} marked as free (reached goal).")
+        received_data = msg.data.strip()
+        # Use regex to extract the robot name at the beginning of the message
+        match = re.match(r'^(\w+)', received_data)
+        if match:
+            robot_name = match.group(1)
+            if robot_name in self.robot_status:
+                self.robot_status[robot_name] = True
+                self.get_logger().info(f"Robot {robot_name} marked as free (reached goal).")
+            else:
+                self.get_logger().error(f"Received status for unknown robot: '{robot_name}'.")
+        else:
+            self.get_logger().error(f"Failed to parse robot name from message: '{received_data}'.")
 
 
 def main(args=None):
@@ -86,7 +95,7 @@ def main(args=None):
             number_of_robots = params["map_merge"]["ros__parameters"]["number_of_robots"]
     except Exception as e:
         print(f"Error reading params.yaml: {e}")
-        number_of_robots = 2  # Default to 1 robot if file reading fails
+        number_of_robots = 1  # Default to 1 robot if file reading fails
 
     # Start the node with the loaded number of robots
     node = RobotStatusPublisher(n=number_of_robots)
@@ -95,9 +104,9 @@ def main(args=None):
     except KeyboardInterrupt:
         pass
     finally:
+        node.destroy_node()
         rclpy.shutdown()
 
 
 if __name__ == '__main__':
     main()
-
