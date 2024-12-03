@@ -86,7 +86,7 @@ def main(args=None):
             number_of_robots = params["map_merge"]["ros__parameters"]["number_of_robots"]
     except Exception as e:
         print(f"Error reading params.yaml: {e}")
-        number_of_robots = 1  # Default to 1 robot if file reading fails
+        number_of_robots = 2  # Default to 1 robot if file reading fails
 
     # Start the node with the loaded number of robots
     node = RobotStatusPublisher(n=number_of_robots)
