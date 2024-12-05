@@ -39,7 +39,7 @@ class ExplorationEnv:
         import numpy as np
 
         # Load the .pgm file in grayscale
-        image = cv2.imread('/home/jjbigdub/gitrepo/rosslam_ws3/explore/map_rotated.pgm', cv2.IMREAD_GRAYSCALE)
+        image = cv2.imread('/home/jjbigdub/gitrepo/bharatforge-iitk/explore/map.pgm', cv2.IMREAD_GRAYSCALE)
 
         # Check if the image was loaded successfully
         if image is None:
@@ -58,8 +58,8 @@ class ExplorationEnv:
         bordered_height, bordered_width = bordered_image.shape
 
         # Define desired padded size
-        desired_width = 450
-        desired_height = 300
+        desired_width = 1250
+        desired_height = 1250
 
         # Calculate padding
         top = (desired_height - bordered_height) // 2
@@ -290,7 +290,7 @@ class ActorCritic(nn.Module):
         return actor_output, value
 
 def main():
-    num_bots = 2
+    num_bots = 6
     model = ActorCritic(num_inputs=4, num_bots=num_bots)
     optimizer = optim.Adam(model.parameters(), lr=1e-4)
     plt.ion()
@@ -389,7 +389,8 @@ def main():
                 print(f"Episode {episode+1}, Step {step_count}, Cumulative Reward: {cumulative_reward}")
 
         print(f"Episode {episode+1}/100, Total Reward: {cumulative_reward}")
-        torch.save(model.state_dict(), f'model{episode}_100.pth')
+        if episode % 5 == 0:
+            torch.save(model.state_dict(), f'/home/jjbigdub/gitrepo/bharatforge-iitk/explore/weights/model{episode}_6.pth')
 
     plt.ioff()
     plt.show()

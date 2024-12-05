@@ -7,16 +7,19 @@ from nav_msgs.msg import OccupancyGrid
 import subprocess
 import time
 import threading
+from std_msgs.msg import String
 
 # Environment parameters
 MAP_SIZE = 500
 ROBOT_PIXEL_START = 99  # Robot1: 99, Robot2: 98, etc.
 WAIT_TIME = 5  # Seconds to wait after reaching goals
+TIMEOUT = 120
+NUM_BOTS = 4
 
 
 # Define the neural network model (Actor-Critic)
 class ActorCritic(nn.Module):
-    def __init__(self, num_inputs=4, num_bots=2):
+    def __init__(self, num_inputs=4, num_bots=4):
         super(ActorCritic, self).__init__()
         self.num_bots = num_bots
 
@@ -71,14 +74,32 @@ class ExplorationEnv(Node):
             self.map_callback,
             10
         )
+        self.collision_subscription = self.create_subscription(
+            String,
+            '/collision_status',
+            self.collision_callback,
+            10
+        )
+        self.collision_dict = {f'robot{i+1}': False for i in range(self.number_of_bots)}
         self.map_data = None
         self.map_info = None
         self.bot_positions = [None for _ in range(self.number_of_bots)]
         input_channels = 4  # Example number of input channels
         self.model = ActorCritic(num_inputs=input_channels, num_bots=self.number_of_bots)
-        self.model.load_state_dict(torch.load('/home/jjbigdub/gitrepo/rosslam_ws3/explore/model67_100.pth'))
+        self.model.load_state_dict(torch.load('/home/jjbigdub/gitrepo/rosslam_ws3/explore/model95_4.pth'))
         self.model.eval()
         self.get_logger().info('ExplorationEnv node has been started.')
+
+    def collision_callback(self, msg):
+        import json
+        try:
+            collision_data = json.loads(msg.data)
+            # Update collision_dict with the received data
+            for robot, status in collision_data.items():
+                if robot in self.collision_dict:
+                    self.collision_dict[robot] = status
+        except json.JSONDecodeError:
+            self.get_logger().error("Invalid collision data format.")
 
     def map_callback(self, msg):
         try:
@@ -161,15 +182,19 @@ class ExplorationEnv(Node):
 
         threads = []
         for i, (map_x, map_y) in enumerate(target_positions):
-            y_pixel = (map_x-250)*0.05
-            x_pixel = (map_y-250)*0.05
-            robot_namespace = f'/robot{i+1}'
-            theta = 0
+            robot_name = f'robot{i+1}'
+            if not self.collision_dict.get(robot_name, False):
+                y_pixel = (map_x-(MAP_SIZE // 2))*0.05
+                x_pixel = (map_y-(MAP_SIZE // 2))*0.05
+                robot_namespace = f'/{robot_name}'
+                theta = 0
 
-            # Create a thread to send the navigation goal
-            thread = threading.Thread(target=self.send_goal, args=(robot_namespace, x_pixel, y_pixel, theta))
-            threads.append(thread)
-            thread.start()
+                # Create a thread to send the navigation goal
+                thread = threading.Thread(target=self.send_goal, args=(robot_namespace, x_pixel, y_pixel, theta))
+                threads.append(thread)
+                thread.start()
+            else:
+                self.get_logger().info(f'Skipping goal for {robot_name} due to collision.')
 
         # Wait for all threads to complete
         for thread in threads:
@@ -199,11 +224,11 @@ class ExplorationEnv(Node):
 
         try:
             # Execute the command with a timeout of 20 seconds
-            result = subprocess.run(command, capture_output=True, text=True, timeout=20)
+            result = subprocess.run(command, capture_output=True, text=True, timeout=TIMEOUT)
             self.get_logger().info('Goal sent successfully.')
             self.get_logger().info(result.stdout)
         except subprocess.TimeoutExpired:
-            self.get_logger().error('Navigation goal timed out after 20 seconds. Aborting the goal.')
+            self.get_logger().error('Navigation goal timed out after 120 seconds. Aborting the goal.')
             # Extract goal_id from the previous command if possible
             # Here, assume goal_id is not available and log the abort action
             abort_command = [
@@ -226,7 +251,7 @@ class ExplorationEnv(Node):
 
 def main(args=None):
     rclpy.init(args=args)  
-    number_of_bots = 2
+    number_of_bots = NUM_BOTS
     exploration_env = ExplorationEnv(number_of_bots)
     try:
         rclpy.spin(exploration_env)

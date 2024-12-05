@@ -185,7 +185,7 @@ local_costmap:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
         scan:
-          topic: /robot2/scan
+          topic: /robot6/scan
           max_obstacle_height: 2.0
           clearing: True
           marking: True
@@ -212,7 +212,7 @@ global_costmap:
       obstacle_layer:
         enabled: True
         scan:
-          topic: /robot2/scan
+          topic: /robot6/scan
           max_obstacle_height: 2.0
           clearing: True
           marking: True
@@ -234,7 +234,7 @@ global_costmap:
 map_server:
   ros__parameters:
     use_sim_time: True
-    yaml_filename: "turtlebot3_world.yaml"
+    yaml_filename: "map.yaml"
     save_map_timeout: 5.0
 
 planner_server:

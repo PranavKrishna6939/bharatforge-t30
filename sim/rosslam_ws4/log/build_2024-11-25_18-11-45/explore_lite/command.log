@@ -1,4 +1,0 @@
-Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite -- -j4 -l4
-Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite -- -j4 -l4
-Invoking command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite
-Invoked command in '/home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/joel-bansal/multi_bot_map_merging/bharat_ws4/build/explore_lite

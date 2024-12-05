@@ -41,11 +41,13 @@ import yaml
 def generate_robot_poses(number_of_robots):
     # Base poses for the robots
     base_poses = [
+        (-3.0, 3.0, 0.01),
         (0.5, 0.0, 0.01),
-        (-0.2, 0.0, 0.01),
-        (0.0, -2.0, 0.01),
-        (1.0, 1.0, 0.01), 
-        (-2.0, 0.0, 0.01),  
+        (2.0, 1.0, 0.01),
+        (2.0, -1.5, 0.01), 
+        (-2.0, 0.0, 0.01), 
+        (-10.0, 0.0, 0.01), 
+        (10.0, 0.0, 0.01),  
     ]
 
     # Ensure there are enough poses for the number of robots
@@ -125,8 +127,6 @@ def generate_launch_description():
     declare_world_cmd = DeclareLaunchArgument(
         "world",
         default_value=os.path.join(launch_dir_map_merge, "worlds", "no_roof_small_warehouse.world"),
-        #default_value=os.path.join(launch_dir_map_merge, "worlds", "office_small.world"),
-        #default_value=os.path.join(launch_dir_map_merge, "worlds", "room2", "world.model"),
         description="Full path to world file to load",
     )
 
@@ -138,34 +138,9 @@ def generate_launch_description():
 
     declare_map_yaml_cmd = DeclareLaunchArgument(
         "map",
-        #default_value=os.path.join(bringup_dir, "maps", "turtlebot3_world.yaml"),
         default_value=os.path.join(launch_dir_map_merge, "maps", "map.yaml"),
         description="Full path to map file to load",
     )
-
-    # declare_robot1_params_file_cmd = DeclareLaunchArgument(
-    #     "robot1_params_file",
-    #     default_value=os.path.join(
-    #         launch_dir_map_merge, "config", "nav2_multirobot_params_1.yaml"
-    #     ),
-    #     description="Full path to the ROS2 parameters file to use for robot1 launched nodes",
-    # )
-
-    # declare_robot2_params_file_cmd = DeclareLaunchArgument(
-    #     "robot2_params_file",
-    #     default_value=os.path.join(
-    #         launch_dir_map_merge, "config", "nav2_multirobot_params_2.yaml"
-    #     ),
-    #     description="Full path to the ROS2 parameters file to use for robot2 launched nodes",
-    # )
-
-    # declare_robot3_params_file_cmd = DeclareLaunchArgument(
-    #     "robot3_params_file",
-    #     default_value=os.path.join(
-    #         launch_dir_map_merge, "config", "nav2_multirobot_params_3.yaml"
-    #     ),
-    #     description="Full path to the ROS2 parameters file to use for robot3 launched nodes",
-    # )
 
     declare_autostart_cmd = DeclareLaunchArgument(
         "autostart",
@@ -389,9 +364,6 @@ def generate_launch_description():
     ld.add_action(declare_simulator_cmd)
     ld.add_action(declare_world_cmd)
     ld.add_action(declare_map_yaml_cmd)
-    #ld.add_action(declare_robot1_params_file_cmd)
-    #ld.add_action(declare_robot2_params_file_cmd)
-    #ld.add_action(declare_robot3_params_file_cmd)
     ld.add_action(declare_use_rviz_cmd)
     ld.add_action(declare_autostart_cmd)
     ld.add_action(declare_rviz_config_file_cmd)
