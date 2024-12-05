@@ -29,6 +29,12 @@ git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git -b humble-devel
 ```
 
 ## EXECUTION
+To build the workspace 
+```
+colcon build
+source install/setup.bash
+```
+
 ```
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:{PATH}/BharatForge/src/m-explore-ros2/map_merge/launch/tb3_simulation/models
 ```
@@ -40,6 +46,10 @@ To Launch the merged map
 ```
 ros2 launch multirobot_map_merge map_merge.launch.py
 rviz2 -d ~{PATH}/BharatForge/src/m-explore-ros2/map_merge/launch/map_merge.rviz
+```
+To launch the yolo for individual bot
+```
+{PATH}/BharatForge/src/individual_yolo.py --robot {Robot_Number}
 ```
 
 #### To change the number of Bots:
