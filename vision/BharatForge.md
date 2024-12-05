@@ -29,7 +29,7 @@ git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git -b humble-devel
 ```
 
 ## EXECUTION
-To build the workspace 
+To build the workspace -
 ```
 colcon build
 source install/setup.bash
@@ -38,28 +38,52 @@ source install/setup.bash
 ```
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:{PATH}/BharatForge/src/m-explore-ros2/map_merge/launch/tb3_simulation/models
 ```
-To launch the Gazebo world alongside other individual costmaps
+
+To launch the Gazebo world alongside other individual costmaps -
 ```
 ros2 launch multirobot_map_merge multi_tb3_simulation_launch.py slam_toolbox:=True
 ```
-To Launch the merged map
+
+To Launch the merged map -
 ```
 ros2 launch multirobot_map_merge map_merge.launch.py
 rviz2 -d ~{PATH}/BharatForge/src/m-explore-ros2/map_merge/launch/map_merge.rviz
 ```
-To launch the yolo for individual bot
+
+To launch the yolo for individual bot -
 ```
-{PATH}/BharatForge/src/individual_yolo.py --robot {Robot_Number}
+{PATH}/BharatForge/src/python3 individual_yolo.py --robot {Robot_Number}
+```
+
+To launch the combined object detection -
+```
+{PATH}/BharatForge/src/python3 dynamic_object_publisher.py
+```
+
+To launch task allotment and task execution -
+```
+{PATH}/BharatForge/src/python3 goal_publisher.py
+{PATH}/BharatForge/src/python3 goal_sender.py
+{PATH}/BharatForge/src/python3 object_coordinate_publisher.py
+{PATH}/BharatForge/src/python3 closest_robot_selector.py
+```
+
+To launch the LLM GUI interface -
+```
+{PATH}/BharatForge/src/python3 goal_publisher.py
+{PATH}/BharatForge/src/python3 goal_sender.py
+{PATH}/BharatForge/src/python3 object_coordinate_publisher.py
+{PATH}/BharatForge/src/python3 llm.py
 ```
 
 #### To change the number of Bots:
-Change the number of bots as needed in the following path
+Change the number of bots as needed in the following path -
 ```
 {PATH}/BharatForge/src/m-explore-ros2/map_merge/config/params.yaml
 ```
 
 #### To change the world file:
-Update the world file in 
+Update the world file in -
 ```
 {PATH}/BharatForge/src/m-explore-ros2/map_merge/launch/tb3_simulation/world
 ```
