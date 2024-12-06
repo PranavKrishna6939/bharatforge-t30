@@ -3,6 +3,7 @@
 ```
 export TURTLEBOT3_MODEL=waffle
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/jjbigdub/gitrepo/rosslam_ws3/src/m-explore-ros2/map_merge/launch/tb3_simulation/models
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/joel-bansal/bharatforge-t30/sim/rosslam_multi/src/m-explore-ros2/map_merge/launch/tb3_simulation/models
 ros2 launch multirobot_map_merge multi_tb3_simulation_launch.py slam_toolbox:=True
 
 ros2 launch multirobot_map_merge map_merge.launch.py
